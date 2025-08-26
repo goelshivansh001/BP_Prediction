@@ -7,7 +7,13 @@ import sklearn as skt
 import warnings
 warnings.filterwarnings("ignore")
 
-grid = joblib.load(r"E:\Gen AI\Projects\bp_model.pkl")
+import joblib
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+model_path = os.path.join(BASE_DIR, "bp_model.pkl")
+
+grid = joblib.load(model_path)
+
 
 # st.title("🩺 Blood Pressure Prediction App")
 st.markdown("<h1 style='text-align: center; color: #2E86C1;'>🩺 Blood Pressure Prediction App</h1>", unsafe_allow_html=True)
